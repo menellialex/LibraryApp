@@ -1,8 +1,8 @@
-
+<!DOCTYPE html>
 
 <html>
     <head>
-        <link href='CSS\nav.css' rel="stylesheet">
+        <link href='CSS\header.css' rel="stylesheet">
     </head>
 
     <body>

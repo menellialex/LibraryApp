@@ -9,9 +9,18 @@
     include "helpers/conn.php"; 
     connection();
 
-    if ($_SESSION["loggedin"] = FALSE)
+    require('Shared\header.php');
+
+    #create a session
+    session_start();
+
+    if ($_SESSION['loggedin'] == FALSE)
     {
-        header("Location: /login.php");
+        header("Location: /libraryapp/login.php");
+    }
+    else
+    {
+        echo("<h1>Welcome!</h1>");
     }
 ?>
 
@@ -20,8 +29,10 @@
     </head>
 
     <body>
-        <?php require_once('Shared\header.php');?>
 
-        <?php require_once('Shared\footer.php');?>
     </body>
 </html>
+
+<?php 
+    require('Shared\footer.php');
+?>
