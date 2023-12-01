@@ -27,7 +27,10 @@ if ($stmt = $conn->prepare('SELECT * FROM customer WHERE EmailAddr = ?'))
         $stmt->fetch();
 
         #create a session
+        session_start();
         session_create_id();
+
+        #we are logged in
         $_SESSION['loggedin'] = TRUE;
 
         #log variables during session
@@ -40,8 +43,6 @@ if ($stmt = $conn->prepare('SELECT * FROM customer WHERE EmailAddr = ?'))
 
         echo("<h1>Welcome " . $FirstName . " " . $LastName . "</h1>");
         echo("<h2>Redirecting to front page</h2>");
-        //wait to redirect
-        sleep(5);
         //redirect to index
         header('Location: ../index.php');
     }

@@ -5,6 +5,8 @@
     include "helpers/conn.php"; 
     connection();
 
+    session_start();
+
     require('Shared\header.php');
 ?>
 

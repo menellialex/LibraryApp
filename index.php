@@ -9,10 +9,9 @@
     include "helpers/conn.php"; 
     connection();
 
-    require('Shared\header.php');
-
-    #create a session
     session_start();
+
+    require('Shared\header.php');
 
     if ($_SESSION['loggedin'] == FALSE)
     {
@@ -20,12 +19,13 @@
     }
     else
     {
-        echo("<h1>Welcome!</h1>");
+        echo("<h1>Welcome " . $_SESSION["FirstName"] . " " . $_SESSION["LastName"] . "!</h1>");
     }
 ?>
 
 <html>
     <head>
+
     </head>
 
     <body>
