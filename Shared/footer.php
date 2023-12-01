@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-
 <html>
     <head>
         <link href='CSS\footer.css' rel="stylesheet">

@@ -18,6 +18,7 @@
                 else
                 {
                     echo("<a href='helpers/logout.php'>Logout</a>");
+                    echo("<a href='profile.php'>Profile</a>");
                 }
             ?>
         </div>
