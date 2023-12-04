@@ -6,14 +6,14 @@
     connection();
 
     session_start();
-
-    require('Shared\header.php');
 ?>
 
 <!DOCTYPE html>
 
 <html>
     <head>
+        <link href='CSS\footer.css' rel="stylesheet">
+        <link href='CSS\header.css' rel="stylesheet">
         <link href='CSS\login.css' rel="stylesheet">
     </head>
 

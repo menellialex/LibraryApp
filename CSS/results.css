@@ -10,12 +10,13 @@
     border: 5px solid;
     border-color: #000000;
 
-    background-color: #9e9e9e;
+    background-color: #adadad;
 
     padding: 3%;
 
-    margin-left: auto;
-    margin-right: auto;
+    /* The 100% width of the table is too big for whatever reason
+    but 93.5% is good enough*/
+    width: 93.5%;
 
     font-size: x-large;
 }

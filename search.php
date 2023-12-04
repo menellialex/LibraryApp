@@ -25,6 +25,8 @@
         </script>
 
         <link href='CSS\search.css' rel="stylesheet">
+        <link href='CSS\footer.css' rel="stylesheet">
+        <link href='CSS\header.css' rel="stylesheet">
     </head>
 
     <body>

@@ -10,24 +10,34 @@
     $conn = connection();
 
     session_start();
-
-    if ($_SESSION['loggedin'] == FALSE)
-    {
-        header("Location: /libraryapp/login.php");
-    }
-    else
-    {
-        echo("<h1>Welcome " . $_SESSION["FirstName"] . " " . $_SESSION["LastName"] . "!</h1>");
-    }
 ?>
 
 <html>
     <head>
+        <link href='CSS\footer.css' rel="stylesheet">
+        <link href='CSS\header.css' rel="stylesheet">
         <link href='CSS\index.css' rel="stylesheet">
     </head>
 
     <body>
         <?php require('Shared\header.php'); ?>
+
+        <div class="heading">
+            <h1>Welcome to Alex's Library App!</h1>
+        </div>
+
+        <div class="welcome">
+            <?php
+                if ($_SESSION['loggedin'] == FALSE)
+                {
+                    header("Location: /libraryapp/login.php");
+                }
+                else
+                {
+                    echo("<h1>Welcome " . $_SESSION["FirstName"] . " " . $_SESSION["LastName"] . "!</h1>");
+                }
+            ?>
+        </div>
 
         <div class="tablecontainer">
             <table class="recommend">
