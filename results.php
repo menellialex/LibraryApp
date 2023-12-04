@@ -20,6 +20,8 @@
         <?php require_once('Shared\header.php');?><br><br>
 
         <div class="returnContainer">
+            <h1>Search Results</h1>
+
             <table class="returntable">
                 <tr>
                     <th>Name</th>
