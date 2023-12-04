@@ -12,7 +12,14 @@
             else
             {
                 echo("<a href='helpers/logout.php'>Logout</a>");
-                echo("<a href='profile.php'>Profile</a>");
+                if ($_SESSION["user"] == true)
+                {
+                    echo("<a href='userprofile.php'>Profile</a>");
+                }
+                else
+                {
+                    echo("<a href='storeprofile.php'>Profile</a>");
+                }
             }
         ?>
     </div>

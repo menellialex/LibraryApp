@@ -41,6 +41,97 @@ if ($stmt = $conn->prepare('SELECT * FROM customer WHERE EmailAddr = ?'))
         $_SESSION['Country'] = $Country;
         $_SESSION['Username'] = $Username;
 
+        #true or false, is user account or store account
+        $_SESSION["user"] = true;
+
+        echo("<h1>Welcome " . $FirstName . " " . $LastName . "</h1>");
+        echo("<h2>Redirecting to front page</h2>");
+        //redirect to index
+        header('Location: ../userprofile.php');
+    }
+    else
+    {
+        #close statement since we will be checking store emails next
+        $stmt->close();
+
+        if ($stmt = $conn->prepare('SELECT * FROM bookkeeper WHERE EmailAddr = ?'))
+        {
+            #bind email to the question mark
+            $stmt->bind_param('s', $_POST['email']);
+            #execute the query and store the result
+            $stmt->execute();
+            $stmt->store_result();
+            
+            #check to see if anything returned, if so, create a session
+            #if not, incorrect email account
+            if ($stmt->num_rows() > 0)
+            {
+                #bind the rest of the results to variables
+                $stmt->bind_result($Name, $Addr, $EmailAddr, $StoreID);
+                $stmt->fetch();
+
+                #create a session
+                session_start();
+                session_create_id();
+
+                #we are logged in
+                $_SESSION['loggedin'] = TRUE;
+
+                #log variables during session
+                $_SESSION['EmailAddr'] = $_POST['email'];
+                $_SESSION['Name'] = $Name;
+                $_SESSION['StoreID'] = $StoreID;
+                $_SESSION['Addr'] = $Addr;
+
+                #true or false, is user account or store account
+                $_SESSION["user"] = false;
+
+                //redirect to index
+                header('Location: ../storeprofile.php');
+            }
+            else
+            {
+                echo("<h1>Email has not been registered withen the system.</h1>");
+                $stmt->close();
+            }
+        }
+
+    }
+    
+    #close
+    $stmt->close();
+}
+elseif ($stmt = $conn->prepare('SELECT * FROM bookkeeper WHERE EmailAddr = ?'))
+{
+    #bind email to the question mark
+    $stmt->bind_param('s', $_POST['email']);
+    #execute the query and store the result
+    $stmt->execute();
+    $stmt->store_result();
+    
+    #check to see if anything returned, if so, create a session
+    #if not, incorrect email account
+    if ($stmt->num_rows() > 0)
+    {
+        #bind the rest of the results to variables
+        $stmt->bind_result($Email, $FirstName, $LastName, $Addr, $Country, $Username);
+        $stmt->fetch();
+
+        #create a session
+        session_start();
+        session_create_id();
+
+        #we are logged in
+        $_SESSION['loggedin'] = TRUE;
+
+        #log variables during session
+        $_SESSION['EmailAddr'] = $_POST['email'];
+        $_SESSION['FirstName'] = $FirstName;
+        $_SESSION['LastName'] = $LastName;
+        $_SESSION['Addr'] = $Addr;
+        $_SESSION['Country'] = $Country;
+        $_SESSION['Username'] = $Username;
+
         echo("<h1>Welcome " . $FirstName . " " . $LastName . "</h1>");
         echo("<h2>Redirecting to front page</h2>");
         //redirect to index

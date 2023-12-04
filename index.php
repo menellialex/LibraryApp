@@ -26,19 +26,6 @@
             <h1>Welcome to Alex's Library App!</h1>
         </div>
 
-        <div class="welcome">
-            <?php
-                if ($_SESSION['loggedin'] == FALSE)
-                {
-                    header("Location: /libraryapp/login.php");
-                }
-                else
-                {
-                    echo("<h1>Welcome " . $_SESSION["FirstName"] . " " . $_SESSION["LastName"] . "!</h1>");
-                }
-            ?>
-        </div>
-
         <div class="tablecontainer">
             <table class="recommend">
                 <tr>
