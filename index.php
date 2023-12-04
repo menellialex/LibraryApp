@@ -11,8 +11,6 @@
 
     session_start();
 
-    require('Shared\header.php');
-
     if ($_SESSION['loggedin'] == FALSE)
     {
         header("Location: /libraryapp/login.php");
@@ -29,6 +27,8 @@
     </head>
 
     <body>
+        <?php require('Shared\header.php'); ?>
+
         <div class="tablecontainer">
             <table class="recommend">
                 <tr>
@@ -66,9 +66,8 @@
                 </tr>
             </table>
         </div>
+
+        <?php require('Shared\footer.php'); ?>
     </body>
 </html>
 
-<?php 
-    require('Shared\footer.php');
-?>

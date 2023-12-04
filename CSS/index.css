@@ -4,20 +4,19 @@
     border: 3px solid;
     border-color: #000;
     padding: 10px;
-
-    align-items: center;
-    text-align: center;
-    justify-content: center;
 }
 
 .tablecontainer
 {
     align-items: center;
     text-align: center;
-    justify-content: center;
+
+    margin: auto;
+    width: 50%;
 }
 
 tr, td, th
 {
     border: 3px solid;
+    padding: 5 px;
 }

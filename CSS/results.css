@@ -1,0 +1,27 @@
+.tableContainer
+{
+    align-items: center;
+    text-align: center;
+}
+
+.returntable
+{
+    box-sizing: content-box;
+    border: 5px solid;
+    border-color: #000000;
+
+    background-color: #9e9e9e;
+
+    padding: 3%;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    font-size: x-large;
+}
+
+tr, td, th
+{
+    border: 3px solid;
+    padding: 10 px;
+}

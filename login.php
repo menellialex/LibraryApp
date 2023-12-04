@@ -18,6 +18,8 @@
     </head>
 
     <body>
+        <?php require('Shared\header.php'); ?>
+
         <div class="centered">
             <h1>Login</h1>
             <form action="helpers/authenticate.php" method="post" class="forms" style="display: inline-block">
@@ -29,9 +31,7 @@
                 <input type="submit" class="submitbutton">
             </form>
         </div>
+
+        <?php require('Shared\footer.php'); ?>
     </body>
 </html>
-
-<?php
-    require('Shared/footer.php');
-?>
