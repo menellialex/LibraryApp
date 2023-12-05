@@ -1,0 +1,19 @@
+.heading
+{
+    background-color: #ffffff;
+}
+
+.righttable
+{
+    width: 50%;
+    float: left;
+    background-color: #adadad;
+    height: 25%;
+}
+
+.lefttable
+{
+    margin-left: 50%;
+    background-color: #adadad;
+    height: 25%;
+}
