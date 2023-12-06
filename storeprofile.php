@@ -73,7 +73,6 @@
                     <th>Return Date</th>
                 </tr>
                 
-                
                 <?php
                     #return all wishlisted book titles
                     if ($result = $conn->query("SELECT b.name, c.emailaddr, r.renttill FROM rents r, books b, customer c WHERE b.ISBN = r.ISBN and r.EmailAddr = c.EmailAddr and r.StoreID = b.StoreID and r.StoreID = '" . $_SESSION["StoreID"] . "';"))
@@ -101,6 +100,10 @@
             </table>
         </div>
 
+        <div>
+            <button onclick = "window.location.href='storeprofile/addbook.php'">Add new book to store</button>
+            <button onclick = "window.location.href='storeprofile/deletebook.php'">Delete a book from the store</button>
+        </div>
 
         <?php require('Shared\footer.php'); ?>
     </body>

@@ -125,6 +125,10 @@
                                     #create extras after getting data rows
                                     if ($_SESSION["user"] == true)
                                     {
+                                        #so what i am doing here is name all three actions (purchase, rent and wishlist) the same and
+                                        #give them a unique value to what actual button was pressed and row. this allows me to then 
+                                        #give a unique value to each button although they all have the same name. This then lets me
+                                        #extract the correct information when running the sql command in rentpurchase.php
                                         echo("<td><button type='submit' name='action' value='purchase" . $rownum . "'>Purchase</button></td>");
                                         echo("<td><button type='submit' name='action' value='rent" . $rownum . "'>Rent</button></td>");
                                         echo("<td><button type='submit' name='action' value='wishlist" . $rownum . "'>Wishlist</button></td>");

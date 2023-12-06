@@ -11,7 +11,7 @@
 
     session_start();
 
-    if ($_session["loggedin"] == false)
+    if ($_SESSION["loggedin"] == false)
     {
         header("Location: /LibraryApp/login.php");
     }
@@ -32,6 +32,8 @@
         </div>
 
         <div class="tablecontainer">
+            <h2>Our Recommendation</h2>
+            
             <table class="recommend">
                 <tr>
                     <th>Name</th>

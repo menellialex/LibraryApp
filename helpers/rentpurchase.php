@@ -7,6 +7,7 @@ session_start();
 include "conn.php";
 $conn = connection();
 
+#check to see if purchase, rent or wishlist had been selected
 if (str_contains($_POST["action"], "purchase"))
 {   
     #get rownumber from action value

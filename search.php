@@ -2,7 +2,7 @@
     #start session
     session_start();
 
-    if ($_session["loggedin"] == false)
+    if ($_SESSION["loggedin"] == 0)
     {
         header("Location: /LibraryApp/login.php");
     }
