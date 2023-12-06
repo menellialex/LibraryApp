@@ -11,18 +11,6 @@
 
 <html>
     <head>
-        <script>
-            function rent()
-            {
-
-            }
-
-            function purchase()
-            {
-
-            }
-        </script>
-
         <link href='CSS\results.css' rel="stylesheet">
         <link href='CSS\footer.css' rel="stylesheet">
         <link href='CSS\header.css' rel="stylesheet">
@@ -46,6 +34,7 @@
                         <th>Price</th>
                         <th>Purchase</th>
                         <th>Rent</th>
+                        <th>Wishlist</th>
                     </tr>
 
                     <?php
@@ -131,6 +120,7 @@
                                     #create extras after getting data rows
                                     echo("<td><button type='submit' name='action' value='purchase" . $rownum . "'>Purchase</button></td>");
                                     echo("<td><button type='submit' name='action' value='rent" . $rownum . "'>Rent</button></td>");
+                                    echo("<td><button type='submit' name='action' value='wishlist" . $rownum . "'>Wishlist</button></td>");
                                     echo("<input type='hidden' name='rownum' value='" . $rownum . "'/>");
                                     echo("</tr>");
 

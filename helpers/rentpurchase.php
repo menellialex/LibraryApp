@@ -49,6 +49,23 @@ elseif (str_contains($_POST["action"], "rent"))
         exit($conn->error);
     }
 }
+elseif (str_contains($_POST["action"], "wishlist"))
+{
+        #get rownumber from action value
+        $rownum = (int)filter_var($_POST["action"], FILTER_SANITIZE_NUMBER_INT);
+        #get other variables from the post request
+        $isbn = $_POST["data" . $rownum . "5"];
+        $query = "INSERT INTO wishlist (EmailAddr, ISBN) VALUES ('" . $_SESSION["EmailAddr"] . "'," . $isbn . ");";
+        
+        if ($conn->query($query))
+        {
+            header('Location: ../search.php');
+        }
+        else
+        {
+            exit($conn->error);
+        }
+}
 else
 {
     #something went wrong
