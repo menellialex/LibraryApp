@@ -1,6 +1,11 @@
 <?php
     #start session
     session_start();
+
+    if ($_session["loggedin"] == false)
+    {
+        header("Location: /LibraryApp/login.php");
+    }
 ?> 
 
 <!DOCTYPE html>

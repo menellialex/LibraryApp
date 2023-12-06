@@ -10,6 +10,11 @@
     $conn = connection();
 
     session_start();
+
+    if ($_session["loggedin"] == false)
+    {
+        header("Location: /LibraryApp/login.php");
+    }
 ?>
 
 <html>

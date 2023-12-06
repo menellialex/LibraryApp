@@ -32,9 +32,14 @@
                         <th>ISBN</th>
                         <th>Store ID</th>
                         <th>Price</th>
-                        <th>Purchase</th>
-                        <th>Rent</th>
-                        <th>Wishlist</th>
+                        <?php
+                        if ($_SESSION["user"] == true)
+                            {
+                                echo("<th>Purchase</th>");
+                                echo("<th>Rent</th>");
+                                echo("<th>Wishlist</th>");
+                            }
+                        ?>
                     </tr>
 
                     <?php
@@ -118,10 +123,13 @@
                                         $datanum += 1;
                                     }
                                     #create extras after getting data rows
-                                    echo("<td><button type='submit' name='action' value='purchase" . $rownum . "'>Purchase</button></td>");
-                                    echo("<td><button type='submit' name='action' value='rent" . $rownum . "'>Rent</button></td>");
-                                    echo("<td><button type='submit' name='action' value='wishlist" . $rownum . "'>Wishlist</button></td>");
-                                    echo("<input type='hidden' name='rownum' value='" . $rownum . "'/>");
+                                    if ($_SESSION["user"] == true)
+                                    {
+                                        echo("<td><button type='submit' name='action' value='purchase" . $rownum . "'>Purchase</button></td>");
+                                        echo("<td><button type='submit' name='action' value='rent" . $rownum . "'>Rent</button></td>");
+                                        echo("<td><button type='submit' name='action' value='wishlist" . $rownum . "'>Wishlist</button></td>");
+                                        echo("<input type='hidden' name='rownum' value='" . $rownum . "'/>");
+                                    }
                                     echo("</tr>");
 
                                     #reset datanum
