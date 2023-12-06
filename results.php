@@ -132,7 +132,6 @@
                                         echo("<td><button type='submit' name='action' value='purchase" . $rownum . "'>Purchase</button></td>");
                                         echo("<td><button type='submit' name='action' value='rent" . $rownum . "'>Rent</button></td>");
                                         echo("<td><button type='submit' name='action' value='wishlist" . $rownum . "'>Wishlist</button></td>");
-                                        echo("<input type='hidden' name='rownum' value='" . $rownum . "'/>");
                                     }
                                     echo("</tr>");
 
@@ -153,11 +152,7 @@
                 </table>
             </form>
         </div>
-
-        <?php
-        echo($rownum);
-        ?>
-       
+        
         <?php require_once('Shared\footer.php');?>
     </body>
 </html>
