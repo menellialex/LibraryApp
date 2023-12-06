@@ -92,7 +92,6 @@
             </table>
         </div>
 
-
         <?php require_once('Shared\footer.php');?>
     </body>
 </html>

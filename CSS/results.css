@@ -28,3 +28,9 @@ tr, td, th
     border: 3px solid;
     padding: 10 px;
 }
+
+button
+{
+    max-width: fit-content;
+    max-height: fit-content;
+}
