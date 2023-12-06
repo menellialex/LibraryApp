@@ -28,7 +28,7 @@
         <div class="righttable">
             <h2>Sold books</h2>
 
-            <table>
+            <table class="soldtable">
                 <tr>
                     <th>Book</th>
                     <th>Customer</th>
@@ -117,9 +117,11 @@
             </form>
         </div>
 
-        <div>
-            <button onclick = "window.location.href='storeprofile/addbook.php'">Add new book to store</button>
-            <button onclick = "window.location.href='storeprofile/deletebook.php'">Delete a book from the store</button>
+        <br><br>
+
+        <div class="edits">
+            <a href = "window.location.href='storeprofile/addbook.php'" class="editbutts">Add new book to store</a>
+            <a href = "window.location.href='storeprofile/deletebook.php'" class="editbutts">Delete a book from the store</a>
         </div>
 
         <?php require('Shared\footer.php'); ?>

@@ -29,3 +29,67 @@
 
     padding: 10px;
 }
+
+.renttable, .soldtable
+{
+    box-sizing: content-box;
+
+      /* The 100% width of the table is too big for whatever reason
+    but 93.5% is good enough*/
+    width: 93.5%;
+
+    padding-left: 3%;
+}
+
+tr, td, th
+{
+    border: 3px solid;
+    padding: 10 px;
+}
+
+.edits
+{
+    align-items: center;
+    text-align: center;
+
+    background-color: #adadad;
+
+    padding:5%;
+
+    margin: auto;
+    width: 50%;
+
+    border: 5px solid;
+    border-color: #000000;
+}
+
+.editbutts
+{
+    padding: 3%;
+
+    border: 5px solid;
+    border-color: #000000;
+
+    text-decoration: none;
+
+    font-size: x-large;
+    color: white;
+
+    background-color: #5b72f1;
+}
+
+.editbutts
+{
+    padding: 3%;
+
+    border: 5px solid;
+    border-color: #000000;
+
+    font-size: x-large;
+}
+
+.editbutts:hover
+{
+    background-color: white;
+    color: #5b72f1;
+}
