@@ -27,43 +27,58 @@
         <div class="righttable">
             <h2>Wishlist</h2>
 
-            <ul>
-                <?php
-                    #return all wishlisted book titles
-                    if ($result = $conn->query("Select  DISTINCT(name) from books b, wishlist w where b.ISBN = w.ISBN and w.EmailAddr = '" . $_SESSION["EmailAddr"] . "';"))
-                    {
-                        #check if we returned any number of rows
-                        if ($result->num_rows > 0)
+            <form action="helpers/wishlisthelper.php" method="post">
+                <ul>
+                    <?php
+                        #return all wishlisted book titles
+                        if ($result = $conn->query("Select  DISTINCT(name) from books b, wishlist w where b.ISBN = w.ISBN and w.EmailAddr = '" . $_SESSION["EmailAddr"] . "';"))
                         {
-                            #if there are rows greater than 0, iterate through them.
-                            while($row = $result->fetch_row())
+                            #check if we returned any number of rows
+                            if ($result->num_rows > 0)
                             {
-                                foreach ($row as $data)
+                                #create rownum and datanum var
+                                $rownum = 1;
+                                $datanum = 1;
+                                #if there are rows greater than 0, iterate through them.
+                                while($row = $result->fetch_row())
                                 {
-                                    echo("<li>" . $data . "</li>");
+                                    foreach ($row as $data)
+                                    {
+                                        echo("<li>" . $data . "</li>");
+                                        echo("<input type='hidden' name='data" . $rownum . $datanum . "' value= '" . $data ."'/>");
+                                        #iterate data num
+                                        $datanum += 1;
+                                    }
+                                    #best explained in rentpurchase.php
+                                    echo("<td><button type='submit' name='action' value='remove" . $rownum . "'>Remove</button></td>");
+                                    echo("<input type='hidden' name='rownum' value='" . $rownum . "'/>");
+                                    echo("</tr>");
+
+                                    #reset datanum
+                                    $datanum = 1;
+                                    #iterate rownum
+                                    $rownum += 1;   
                                 }
                             }
                         }
-                    }
-                    else
-                    {
-                        echo($conn->error);
-                    }
-                ?>
-            </ul>
+                        else
+                        {
+                            echo($conn->error);
+                        }
+                    ?>
+                </ul>
+            </form>
 
         </div>
 
         <div class="lefttable">
-            <h2>Current Rents</h2>
-
+        <h2>Current Rents</h2>
             <table class="renttable">
                 <tr>
                     <th>Book</th>
                     <th>Return Date</th>
                     <th>Store</th>
                 </tr>
-                
                 
                 <?php
                     #return all wishlisted book titles

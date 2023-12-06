@@ -66,38 +66,55 @@
         <div class="lefttable">
             <h2>Current Rents</h2>
 
-            <table class="renttable">
-                <tr>
-                    <th>Book</th>
-                    <th>Customer</th>
-                    <th>Return Date</th>
-                </tr>
-                
-                <?php
-                    #return all wishlisted book titles
-                    if ($result = $conn->query("SELECT b.name, c.emailaddr, r.renttill FROM rents r, books b, customer c WHERE b.ISBN = r.ISBN and r.EmailAddr = c.EmailAddr and r.StoreID = b.StoreID and r.StoreID = '" . $_SESSION["StoreID"] . "';"))
-                    {
-                        #check if we returned any number of rows
-                        if ($result->num_rows > 0)
+            <form action="helpers/rentreturn.php" method="post">
+                <table class="renttable">
+                    <tr>
+                        <th>Book</th>
+                        <th>Customer</th>
+                        <th>Return Date</th>
+                        <th>Returned?</th>
+                    </tr>
+                    
+                    <?php
+                        #return all wishlisted book titles
+                        if ($result = $conn->query("SELECT b.name, c.emailaddr, r.renttill FROM rents r, books b, customer c WHERE b.ISBN = r.ISBN and r.EmailAddr = c.EmailAddr and r.StoreID = b.StoreID and r.StoreID = '" . $_SESSION["StoreID"] . "';"))
                         {
-                            #if there are rows greater than 0, iterate through them.
-                            while($row = $result->fetch_row())
+                            #check if we returned any number of rows
+                            if ($result->num_rows > 0)
                             {
-                                echo("<tr>");
-                                foreach ($row as $data)
+                                #create rownum and datanum var
+                                $rownum = 1;
+                                $datanum = 1;
+                                #if there are rows greater than 0, iterate through them.
+                                while($row = $result->fetch_row())
                                 {
-                                    echo("<td>" . $data . "</td>");
+                                    echo("<tr>");
+                                    foreach ($row as $data)
+                                    {
+                                        echo("<td>" . $data . "</td>");
+                                        echo("<input type='hidden' name='data" . $rownum . $datanum . "' value= '" . $data ."'/>");
+                                        #iterate data num
+                                        $datanum += 1;
+                                    }
+                                    #best explained in rentpurchase.php
+                                    echo("<td><button type='submit' name='action' value='remove" . $rownum . "'>Returned</button></td>");
+                                    echo("<input type='hidden' name='rownum' value='" . $rownum . "'/>");
+                                    echo("</tr>");
+
+                                    #reset datanum
+                                    $datanum = 1;
+                                    #iterate rownum
+                                    $rownum += 1;   
                                 }
-                                echo("</tr>");
                             }
                         }
-                    }
-                    else
-                    {
-                        echo($conn->error);
-                    }
-                ?>
-            </table>
+                        else
+                        {
+                            echo($conn->error);
+                        }
+                    ?>
+                </table>
+            </form>
         </div>
 
         <div>
