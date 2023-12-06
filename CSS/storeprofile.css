@@ -9,6 +9,12 @@
     float: left;
     background-color: #adadad;
     height: 25%;
+
+    box-sizing: content-box;
+    border: 5px solid;
+    border-color: #000000;
+
+    padding: 10px;
 }
 
 .lefttable
@@ -16,4 +22,10 @@
     margin-left: 50%;
     background-color: #adadad;
     height: 25%;
+
+    box-sizing: content-box;
+    border: 5px solid;
+    border-color: #000000;
+
+    padding: 10px;
 }

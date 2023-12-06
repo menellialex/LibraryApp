@@ -3,3 +3,21 @@ h1
     text-align: center;
 }
 
+.centered
+{
+    align-items: center;
+    text-align: center;
+
+    margin: auto;
+    width: 50%;
+
+    background-color: #adadad;
+
+    box-sizing: content-box;
+    border: 5px solid;
+    border-color: #000000;
+
+    padding: 3%;
+
+    font-size: x-large;
+}

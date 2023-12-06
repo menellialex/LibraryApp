@@ -72,7 +72,8 @@
         </div>
 
         <div class="lefttable">
-        <h2>Current Rents</h2>
+            <h2>Current Rents</h2>
+            
             <table class="renttable">
                 <tr>
                     <th>Book</th>

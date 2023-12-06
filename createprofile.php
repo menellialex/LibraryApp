@@ -41,12 +41,12 @@
                 <label for="username">Username:</label>
                 <input type="text" name="username" placeholder="Username" required><br><br>
             
-                </br></br>
+                </br>
 
                 <input type="submit" class="submitbutton">
                 <input type="reset" class="submitbutton"><br><br>
 
-                <a href="createprofile.php">Already have an account? Sign in here!</a><br><br>
+                <a href="login.php">Already have an account? Sign in here!</a><br><br>
 
                 <p>If you would like to create a store profile, please contact sales@libraryapp.com</p>
             </form>
