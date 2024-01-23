@@ -120,8 +120,8 @@
         <br><br>
 
         <div class="edits">
-            <a href = "window.location.href='storeprofile/addbook.php'" class="editbutts">Add new book to store</a>
-            <a href = "window.location.href='storeprofile/deletebook.php'" class="editbutts">Delete a book from the store</a>
+            <a href = "storeprofile/addbook.php" class="editbutts">Add new book to store</a>
+            <a href = "storeprofile/deletebook.php" class="editbutts">Delete a book from the store</a>
         </div>
 
         <?php require('Shared\footer.php'); ?>

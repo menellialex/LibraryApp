@@ -17,7 +17,7 @@
         <?php require_once('..\Shared\header.php');?>
 
         <div class="heading">
-            <h1>Add book</h1>
+            <h1>Remove book</h1>
         </div>
 
         <div class="formcontainer">
